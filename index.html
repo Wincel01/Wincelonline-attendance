@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Attendance System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background"></div>
+  <div class="container" id="login-section">
+    <h1>Online Attendance System</h1>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" placeholder="Enter username" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter password" required>
+      
+      <label for="role">Role:</label>
+      <select id="role" name="role" required>
+        <option value="teacher">Teacher</option>
+        <option value="student">Student</option>
+      </select>
+      
+      <button type="submit">Login</button>
+      <p id="create-account">Don’t have an account? <a href="#" onclick="showRegister()">Create one</a></p>
+    </form>
+  </div>
+
+  <div class="container" id="register-section" style="display: none;">
+    <h1>Create Account</h1>
+    <form id="register-form">
+      <label for="reg-username">Username:</label>
+      <input type="text" id="reg-username" name="reg-username" placeholder="Choose a username" required>
+      
+      <label for="reg-password">Password:</label>
+      <input type="password" id="reg-password" name="reg-password" placeholder="Choose a password" required>
+      
+      <label for="reg-role">Role:</label>
+      <select id="reg-role" name="reg-role" required>
+        <option value="teacher">Teacher</option>
+        <option value="student">Student</option>
+      </select>
+      
+      <button type="submit">Create Account</button>
+      <p id="back-to-login"><a href="#" onclick="showLogin()">Back to login</a></p>
+    </form>
+  </div>
+
+  <div class="container" id="attendance-section" style="display: none;">
+    <h1>Welcome, <span id="user-role"></span></h1>
+    <p id="user-info"></p>
+    <label for="class-select">Select Class:</label>
+    <select id="class-select">
+      <option value="math">Math</option>
+      <option value="science">Science</option>
+      <option value="history">History</option>
+    </select>
+    <h2>Attendance</h2>
+    <form id="attendance-form">
+      <button type="submit">Mark Attendance</button>
+    </form>
+    <ul id="attendance-list"></ul>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
